@@ -21,7 +21,7 @@ function Navbar(){
         
     }
     return (
-        <div className="lg:pl-5 lg:pr-5 flex justify-between items-center bg-black  text-white text-2xl">
+        <div className="lg:pl-5 lg:pr-5 pl-0 pr-0 flex justify-between items-center bg-black  text-white text-2xl">
           <div>
             <NavLink to="/"><img src={logo} className="h-[90px]"></img></NavLink>
           </div>
