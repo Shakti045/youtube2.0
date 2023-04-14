@@ -11,7 +11,7 @@ export let Appcontext=createContext();
   const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'd8084555f1msh92235c16cf28bffp17586ejsnc8cda798bf39',
+      'X-RapidAPI-Key': 'e7aa06906emshfc4ba8dd14b85b0p1321f8jsnc54df8553edf',
 		'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
 	}
 };
@@ -19,11 +19,8 @@ export let Appcontext=createContext();
       navigate("/")
      setloader(true);
    try{
-    console.log("hmm je");
     let data=await fetch(`https://youtube-v31.p.rapidapi.com/search?q=${search}&part=snippet%2Cid&regionCode=IN&maxResults=50`, options);
-    console.log(data);
     let {items}=await data.json();
-    console.log(items);
     toast.success("Video upated Successfully")
     setvideo(items);
    }catch(err){
