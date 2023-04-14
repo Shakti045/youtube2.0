@@ -5,7 +5,7 @@ function Videocard({id,snippet}){
     return (
         <Link to={`/Watchvideo/${id.videoId}`}>
           <div  className=" w-320 min-h-[300px]  flex flex-col text-white">
-         <div className="bg-richblack-700">
+         <div className="bg-richblack-700 rounded-md">
          <img src={snippet.thumbnails.medium.url} className=" rounded-md"></img>
          </div>
           <div>

@@ -10,9 +10,9 @@ import Channelpage from "./Components/Channelpage";
 function App() {
   return <div  className="overflow-hidden">
       <Navbar></Navbar>
-      <Sidebar></Sidebar>
+      
       <Routes>
-         <Route path="/" element={<Feed></Feed>}></Route>
+         <Route path="/" element={<><Feed></Feed> <Sidebar></Sidebar></>}></Route>
          <Route path="/Channelpage" element={<Channelpage></Channelpage>}></Route>
          <Route path="/Watchvideo/:videoid"  element={<Watchvideo></Watchvideo>}></Route>
       </Routes>

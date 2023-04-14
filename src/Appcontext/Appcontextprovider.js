@@ -20,7 +20,7 @@ export let Appcontext=createContext();
      setloader(true);
    try{
     console.log("hmm je");
-    let data=await fetch(`https://youtube-v31.p.rapidapi.com/search?q=${search}&part=snippet%2Cid&regionCode=IN&maxResults=50&order=date`, options);
+    let data=await fetch(`https://youtube-v31.p.rapidapi.com/search?q=${search}&part=snippet%2Cid&regionCode=IN&maxResults=50`, options);
     console.log(data);
     let {items}=await data.json();
     console.log(items);

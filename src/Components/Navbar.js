@@ -27,7 +27,7 @@ function Navbar(){
           </div>
           <div className=" flex gap-1 bg-richblack-700 px-3  rounded-md">
             <form onSubmit={submithandler}>
-            <input className=" border-none w-[30vw] px-5 py-3 bg-transparent rounded-lg text-white text-sm outline-none" type="text" value={searchvalue} placeholder="Search for anything" onChange={handler}></input>
+            <input className="spellCheck=false border-none w-[30vw] px-5 py-3 bg-transparent rounded-lg text-white text-sm outline-none" type="text" value={searchvalue} placeholder="Search for anything" onChange={handler}></input>
             <button className="relative top-1"><AiOutlineSearch className="text-red-600"></AiOutlineSearch></button>
             </form>
           </div>
