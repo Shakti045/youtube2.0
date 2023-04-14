@@ -21,12 +21,13 @@ function Navbar(){
         
     }
     return (
-        <div className="lg:pl-5 lg:pr-5 flex justify-between items-center bg-black  text-white text-2xl">
+        <div className="lg:pl-5 lg:pr-5 pl-0 pr-0 flex justify-between items-center bg-black  text-white text-2xl">
           <div>
             <NavLink to="/"><img src={logo} className="h-[90px]"></img></NavLink>
           </div>
           <div className=" flex gap-1 bg-richblack-700 px-3  rounded-md">
             <form onSubmit={submithandler}>
+
             <input className="spellCheck=false border-none w-[30vw] px-5 py-3 bg-transparent rounded-lg text-white text-sm outline-none" type="text" value={searchvalue} placeholder="Search for anything" onChange={handler}></input>
             <button className="relative top-1"><AiOutlineSearch className="text-red-600"></AiOutlineSearch></button>
             </form>
