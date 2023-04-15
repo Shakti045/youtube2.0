@@ -1,15 +1,16 @@
-import { logDOM } from "@testing-library/react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Appcontext } from "../Appcontext/Appcontextprovider";
 
 function Videocard({id,snippet}){
 
-
+let {theme}=useContext(Appcontext);
 if(id.kind==="youtube#video"){
 return(
 
 <Link to={`/Watchvideo/${id.videoId}`}>
-          <div  className=" w-320 min-h-[300px]  flex flex-col text-white">
-         <div className="bg-richblack-700 rounded-md">
+          <div  className={` ${theme===true?"text-white":"text-black"} w-320 min-h-[300px]  flex flex-col`}>
+         <div className="rounded-md">
          <img src={snippet.thumbnails.medium.url} className="rounded-md"></img>
          </div>
           <div>
@@ -27,7 +28,7 @@ return(
 
   return (
     <Link to={`/Playlist/${id.playlistId}`}>
-          <div  className=" w-320 min-h-[300px]  flex flex-col text-white">
+          <div  className=" w-320 min-h-[300px]  flex flex-col ">
          <div className="bg-richblack-700 rounded-md">
          <img src={snippet.thumbnails.medium.url} className="rounded-md"></img>
          </div>
@@ -47,7 +48,7 @@ return(
 }else if(id.kind==="youtube#channel"){
   return(
     <Link to={`/Channelpage/${id?.channelId}`}>
-          <div  className=" w-320 min-h-[300px]  flex flex-col text-white">
+          <div  className=" w-320 min-h-[300px]  flex flex-col">
          <div className="bg-richblack-700 rounded-md">
          <img src={snippet.thumbnails.medium.url} className="rounded-md"></img>
          </div>

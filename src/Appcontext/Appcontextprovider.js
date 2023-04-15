@@ -8,7 +8,7 @@ export let Appcontext=createContext();
   let [loader,setloader]=useState(false);
   let [theme,settheme]=useState(true);
   let [video,setvideo]=useState([]);
-  let liked=[];
+
   const options = {
 	method: 'GET',
 	headers: {
