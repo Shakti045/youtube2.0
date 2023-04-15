@@ -7,7 +7,7 @@ import {IoMdHeartDislike } from 'react-icons/io';
 import { toast } from "react-hot-toast";
 function Videodetail(props){
     let location=useLocation();
-    console.log(props);
+
 let [showdesc,setshowdesc]=useState(false);
 
 let [liked,setliked]=useState(false);

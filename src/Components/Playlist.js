@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { Appcontext } from "../Appcontext/Appcontextprovider";
 import Loader from "./Loader";
 import Videocard from "./Videocard";
-function Channelpage(){
+function Playlist(){
     let location =useLocation();
-    let cid=location.pathname.split("/").at(-1);
+    let pid=location.pathname.split("/").at(-1);
     let { video,setvideo,loader,setloader}=useContext(Appcontext);
     const options = {
         method: 'GET',
@@ -15,26 +15,23 @@ function Channelpage(){
             'X-RapidAPI-Host': 'youtube-v31.p.rapidapi.com'
         }
     };
-  async  function getchanneldata(){
+  async  function getplaylistldata(){
     setloader(true);
-      let data=await fetch(`https://youtube-v31.p.rapidapi.com/search?channelId=${cid}&part=snippet%2Cid&order=date&maxResults=50`,options);
+      let data=await fetch(`https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=${pid}&part=snippet&maxResults=50`,options);
       let {items}= await data.json();
       setvideo(items);
+      console.log(items);
       setloader(false);
     }
     useEffect(()=>{
-        getchanneldata();
+        getplaylistldata();
     },[location.pathname])
    
 
     return (
-        <div className="grid lg:grid-cols-4 grid-cols-1  gap-5  lg:pt-28 pt-44 overflow-y-auto overflow-x-hidden h-[100vh] w-[100vw] absolute -z-20 top-0 left-0 right-0 bottom-0 bg-richblack-700">
-           {
-             loader===true?(<Loader></Loader>):( video.map((data)=>{
-                return <Videocard key={data?.id?.videoId} {...data}></Videocard>
-            }))
-           }
+        <div className="grid lg:grid-cols-4 grid-cols-1  gap-5  lg:pt-28 pt-44 overflow-y-auto">
+                 PLAY LIST WORK IS IN PROGRESS
         </div>
     )
 }
-export default Channelpage;
+export default Playlist;
